@@ -13,11 +13,10 @@ def executar_codigo():
             messagebox.showerror("Erro", f"O arquivo não foi encontrado:\n{script_path}")
             return
         
-        # Executa o script Python sem mostrar o prompt de comando
         result = subprocess.run(
             ["python", script_path], 
-            stdout=subprocess.DEVNULL,  # Oculta a saída padrão
-            stderr=subprocess.DEVNULL   # Oculta erros
+            stdout=subprocess.DEVNULL,  
+            stderr=subprocess.DEVNULL   
         )
 
         # Mostra a mensagem final com base no retorno
@@ -32,24 +31,21 @@ def executar_codigo():
 janela = tk.Tk()
 janela.title("Executar Código Python")
 janela.geometry("400x300")
-janela.configure(bg="#f0f0f0")  # Cor de fundo
+janela.configure(bg="#f0f0f0")
 
 # Título
 titulo = tk.Label(janela, text="Abertura de chamado", font=("Arial", 18, "bold"), bg="#f0f0f0")
 titulo.pack(pady=20)
 
-# Adicionando um ícone
-# janela.iconbitmap('Caminho do ícone')
-
 # Botão para executar o código
 botao_executar = tk.Button(janela, text="Executar Código", font=("Arial", 14), bg="#4CAF50", fg="white", command=executar_codigo)
 botao_executar.pack(pady=30)
 
-# Rodapé
+
 rodape = tk.Label(janela, text="Desenvolvido por Você", font=("Arial", 10), fg="gray", bg="#f0f0f0")
 rodape.pack(side="bottom", pady=10)
 
-# Adicionando um frame para melhor organização (opcional)
+
 frame = tk.Frame(janela, bg="#f0f0f0")
 frame.pack(pady=10)
 
